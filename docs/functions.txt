@@ -1,0 +1,12 @@
+regisztráció: az alkalmazásba be lehet regisztrálni, név, emailcím és jelszó megadásával
+bejelentkezés: az alkalmazásba be lehet jelentkezni egy meglévő felhasználói fiókkal
+új bejegyzés közzététele: cím, bejegyzés tárgya, bejegyzés, címke megadásával
+(saját) meglévő bejegyzés módosítása
+(saját) meglévő bejegyzés törlése
+meglévő bejegyzéshez hozzászólás írása
+(saját) hozzászólás törlése
+beállítások módosítása: profil kép, user név, szöveges leírás, email cím, jelszó módosítása
+saját bejegyzések megtekintése
+kedvenc bejegyzések megtekintése
+kedvenc bejegyzések megjelölése
+kedvenc bejegyzések megjelölésének visszavonása
