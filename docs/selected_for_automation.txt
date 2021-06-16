@@ -1,0 +1,4 @@
+A001,Conduit_TC_001,felület automatizálás, mert kritikus funkció
+A002,Conduit_TC_002,nem automatizálható
+A003_Conduit_TC_003,nem automatizálható
+A004_Conduit_TC_011,felület automatizálás, mert fontos funkció
