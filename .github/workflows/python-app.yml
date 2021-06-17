@@ -34,19 +34,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-        - name: install Nodejs
-      uses: actions/setup-node@v2
-      with:
-        node-version: '14'
-    - name: Install Selenium Side Runner
-      run: |
-        npm install -g selenium-side-runner
-    - name: Install Chrome
-      run: |
-        sudo apt install google-chrome-stable
-    - name: Install chromedriver
-      run: |
-        seleniumbase install chromedriver    
-    - name: Run Tests
-      run: |
-        selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" test.side
+
