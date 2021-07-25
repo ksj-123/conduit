@@ -1,4 +1,13 @@
-A001,Conduit_TC_001,felület automatizálás, mert kritikus funkció
-A002,Conduit_TC_002,nem automatizálható
-A003_Conduit_TC_003,nem automatizálható
-A004_Conduit_TC_011,felület automatizálás, mert fontos funkció
+A001, TC001, felület automatizálás, mert kritikus funkció
+A002, TC002, felület automatizálás, mert kritikus funkció
+A003, TC003, felület automatizálás, mert kritikus funkció
+A004, TC004, felület automatizálás, 
+A005, TC005, felület automatizálás, mert fontos funkció
+A006, TC006, felület automatizálás
+A007, TC007, felület automatizálás, mert fontos funkció
+A008, TC008, felület automatizálás, mert fontos funkció
+A009, TC009, felület automatizálás
+A010, TC010, felület automatizálás, mert fontos funkció
+A011, TC011, felület automatizálás,
+A012, TC012, felület automatizálás,
+A013, TC013, felület automatizálás,

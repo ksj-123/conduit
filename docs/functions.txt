@@ -1,12 +1,12 @@
-"regisztráció": az alkalmazásba be lehet regisztrálni, név, emailcím és jelszó megadásával
-"bejelentkezés": az alkalmazásba be lehet jelentkezni egy meglévő felhasználói fiókkal
-"kijelentkezés"
-# adatkezelési nyilatkozat
-"új adat bevitele" : új bejegyzés közzététele: cím, bejegyzés tárgya, bejegyzés, címke megadásával0
-"ismételt és sorozatos adatbevitel adatforrásból": beállítások módosítása: profil kép, user név, szöveges leírás, email cím, jelszó módosítása
-"meglévő adat módosítása": (saját) meglévő bejegyzés módosítása
-"adat vagy adatok törlése": (saját) meglévő bejegyzés törlése
-# adatok lementése felületről
+regisztráció
+bejelentkezés
+kijelentkezé
+adatkezelési nyilatkozat
+új adat bevitel : új bejegyzés közzététele: cím, bejegyzés tárgya, bejegyzés, címke megadásával0
+ismételt és sorozatos adatbevitel adatforrásból beállítások módosítása: profil kép, user név, szöveges leírás, email cím, jelszó módosítása
+meglévő adat módosítása: (saját) meglévő bejegyzés módosítása
+adat vagy adatok törlése: (saját) meglévő bejegyzés törlése
+adatok lementése felületről
 meglévő bejegyzéshez hozzászólás írása
 (saját) hozzászólás törlése
 saját bejegyzések megtekintése
