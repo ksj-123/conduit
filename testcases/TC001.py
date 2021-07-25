@@ -1,29 +1,48 @@
 # TC001 - User Registration
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
-import csv
+from selenium.webdriver.chrome.options import Options
 import time
+import csv
 
-driver = webdriver.Chrome(ChromeDriverManager().install())
+opt = Options()
+opt.headless = False
+
+driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
+driver.set_window_size(1000, 500, 500)
+
+
+def find_than_clear(xpath):
+    find = driver.find_element_by_xpath(xpath)
+    find.clear()
+    return find
+
 
 try:
-    driver.get("https://react-layr-realworld-example-app.layrjs.com/all")
+    driver.get("http://localhost:1667/")
 
-    def register(username, email, password):
-        driver.get("http://localhost:1667/#/")
-        driver.find_element_by_xpath('//*[@id="root"]/div/nav/div/ul/li[3]/a').click()
-        with open('registration.csv') as csvfile:
+    # Sign up
+    def registration_process():
+        driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]/a').click()
+        with open('../text/registration.csv', 'r') as csvfile:
             csvreader = csv.reader(csvfile, delimiter=',')
             next(csvreader)
             for row in csvreader:
                 print(row)
-                username = find_and_clear_by_xpath('//*[@id="root"]/div/div/div/div/div/form/fieldset/fieldset[1]/input').send_keys(row[0])
-                email = find_and_clear_by_xpath('//*[@id="root"]/div/div/div/div/div/form/fieldset/fieldset[2]/input').send_keys(row[1])
-                password = find_and_clear_by_xpath('//*[@id="root"]/div/div/div/div/div/form/fieldset/fieldset[3]/input').send_keys(row[2])
-        driver.find_element_by_xpath('//*[@id="root"]/div/div/div/div/div/form/fieldset/button').click()
+                find_than_clear('//*[@id="app"]/div/div/div/div/form/fieldset[1]/input').send_keys(row[0])
+                find_than_clear('//*[@id="app"]/div/div/div/div/form/fieldset[2]/input').send_keys(row[1])
+                find_than_clear('//*[@id="app"]/div/div/div/div/form/fieldset[3]/input').send_keys(row[2])
+        sign_up = driver.find_element_by_xpath('//form/button')
+        sign_up.click()
 
-    # leellenőrizni, hogy a regisztrált username megjelenik a jobb felső sarokban
-    # assert
+    registration_process()
+    time.sleep(8)
+
+    # Check box
+    # assert (driver.find_element_by_class_name("swal-text").text == "Your registration was successful!")
+    # time.sleep(5)
+    # driver.find_element_by_class_name("swal-button swal-button--confirm").click()
+    # time.sleep(5)
 
 finally:
     driver.close()
