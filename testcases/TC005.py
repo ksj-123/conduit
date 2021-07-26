@@ -14,7 +14,7 @@ try:
         email = driver.find_element_by_tag_name('Email').send_keys('username1@gmail.com')
         password = driver.find_element_by_tag_name('Password').send_keys('Username1')
         driver.find_element_by_class_name('btn').click()
-    sign_in('user1@gmail.com', 'User1')
+    sign_in('user1@gmail.com','User1')
 
     # driver.find_element_by_xpath('//*[@id="root"]/div/nav/div/ul/li[2]/a').click()
     # with open('post.csv') as csvfile:

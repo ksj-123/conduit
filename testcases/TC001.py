@@ -21,6 +21,7 @@ def find_than_clear(xpath):
 try:
     driver.get("http://localhost:1667/")
 
+
     # Sign up
     def registration_process():
         driver.find_element_by_xpath('//*[@id="app"]/nav/div/ul/li[3]/a').click()
@@ -35,14 +36,16 @@ try:
         sign_up = driver.find_element_by_xpath('//form/button')
         sign_up.click()
 
+
     registration_process()
     time.sleep(8)
 
     # Check box
-    # assert (driver.find_element_by_class_name("swal-text").text == "Your registration was successful!")
-    # time.sleep(5)
-    # driver.find_element_by_class_name("swal-button swal-button--confirm").click()
-    # time.sleep(5)
+    assert (driver.find_element_by_xpath("/html/body/div[2]/div/div[3]").text == "Your registration was successful!")
+    time.sleep(5)
+    driver.find_element_by_xpath("/html/body/div[2]/div/div[4]/div/button").click()
+    time.sleep(5)
 
 finally:
-    driver.close()
+    pass
+    # driver.close()
