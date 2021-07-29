@@ -2,6 +2,10 @@
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.action_chains import ActionChains
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
 import time
 import csv
 
@@ -38,7 +42,8 @@ try:
 
 
     registration_process()
-    time.sleep(8)
+    print(registration_process())
+
 
     # Check box
     assert (driver.find_element_by_xpath("/html/body/div[2]/div/div[3]").text == "Your registration was successful!")
@@ -47,5 +52,4 @@ try:
     time.sleep(5)
 
 finally:
-    pass
-    # driver.close()
+    driver.close()
