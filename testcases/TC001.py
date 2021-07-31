@@ -42,11 +42,11 @@ try:
 
 
     registration_process()
-    print(registration_process())
-
+    print(registration_process)
+    time.sleep(5)
 
     # Check box
-    assert (driver.find_element_by_xpath("/html/body/div[2]/div/div[3]").text == "Your registration was successful!")
+    assert ('Welcome!' in driver.find_element_by_xpath('/html/body/div[2]/div/div[2]').text)
     time.sleep(5)
     driver.find_element_by_xpath("/html/body/div[2]/div/div[4]/div/button").click()
     time.sleep(5)
