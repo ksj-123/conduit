@@ -56,7 +56,7 @@ jobs:
 
       - name: Install chromedriver
         run: |
-        seleniumbase install chromedriver
+          seleniumbase install chromedriver
 
       - name: Run Tests
         run: |
