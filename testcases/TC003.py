@@ -1,9 +1,8 @@
-# TC002 - User login
+# TC002 - User log out
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import time
-
 
 opt = Options()
 opt.headless = False
@@ -42,10 +41,21 @@ try:
     sign_in(email, pwd)
     time.sleep(2)
 
-    # Check box
-    assert username == find('//*[@id="app"]/nav/div/ul/li[4]/a').text
+
+    # Sign Out
+    def sign_out():
+        out_button = find('//*[@id="app"]/nav/div/ul/li[5]/a')
+        out_button.click()
+
+
+    sign_out()
+    time.sleep(2)
+
+    # Controll
+    assert username != find('/html/body').text
     print(username)
     time.sleep(2)
+
 
 finally:
     driver.close()
