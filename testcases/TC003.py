@@ -11,14 +11,14 @@ driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
 driver.set_window_size(1000, 500, 500)
 
 try:
-    # Oldal betöltése
+    # Load page
     driver.get('http://localhost:1667/')
     time.sleep(2)
 
-    # Feltöltendő adatok megadása
-    email = 'username5005@gmail.com'
-    username = 'username5005'
-    pwd = 'Username5005'
+    # Enter the data to be uploaded
+    email = 'username5555@gmail.com'
+    username = 'username5555'
+    pwd = 'Username5555'
 
 
     # Driver find
