@@ -1,4 +1,4 @@
-# TC002 - User log in
+# TC004 - Follow other author
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -42,10 +42,29 @@ try:
     sign_in(email, pwd)
     time.sleep(2)
 
+    # Favourit
+    # if
+    #     else
+    #
+    #     for i in range
+    #
+    #
+    # def favor():
+        heart = find('//*[@id="app"]/div/div[2]/div/div[1]/div[2]/div/div/div[2]/div/button')
+        heart.click()
+        '//*[@id="app"]/div/div[2]/div/div[1]/div[2]/div/div/div[5]/div/button'
+        '//*[@id="app"]/div/div[2]/div/div[1]/div[2]/div/div/div[2]/div/button
+
+
+    # userek
+    '//*[@id="app"]/div/div[2]/div/div[1]/div[2]/div/div/div[6]/div/div/a'
+    '//*[@id="app"]/div/div[2]/div/div[1]/div[2]/div/div/div[7]/div/div/a'
+
+
     # Check box
-    assert username == find('//*[@id="app"]/nav/div/ul/li[4]/a').text
-    print(username)
-    time.sleep(2)
+    # assert username == find('//*[@id="app"]/nav/div/ul/li[4]/a').text
+    # print(username)
+    # time.sleep(2)
 
 finally:
     driver.close()

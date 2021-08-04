@@ -1,4 +1,4 @@
-# TC002 - User log in
+# TC006 - Post comment
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -21,6 +21,7 @@ def find(xpath):
 email = 'testuser1@example.com'
 username = 'testuser1'
 pwd = 'Abcd123$'
+comment_text = 'I written a comment to the post'
 
 try:
     # Load page
@@ -42,10 +43,37 @@ try:
     sign_in(email, pwd)
     time.sleep(2)
 
-    # Check box
-    assert username == find('//*[@id="app"]/nav/div/ul/li[4]/a').text
-    print(username)
+
+    # Post view
+    def view():
+        find('//*[@id="app"]/nav/div/ul/li[4]/a').click()  # username click
+        time.sleep(2)
+        find('//*[@id="app"]/div/div[2]/div/div/div[1]/ul/li[1]/a').click()  # my title click
+        time.sleep(2)
+        find('//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a/h1').click()  # post title click
+        time.sleep(2)
+
+
+    view()
+    print(view)
     time.sleep(2)
+
+
+    # Post comment
+    def comment():
+        find('//*[@id="app"]/div/div[2]/div[2]/div/div/form/div[1]/textarea').send_keys(comment_text)
+        find('//*[@id="app"]/div/div[2]/div[2]/div/div/form/div[2]/button').click()
+
+
+    comment()
+    print(comment)
+    time.sleep(2)
+
+    # Check
+    assert comment_text == find('//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div[1]/p').text
+    print(comment_text)
+
+
 
 finally:
     driver.close()

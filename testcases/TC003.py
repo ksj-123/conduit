@@ -1,4 +1,4 @@
-# TC002 - User log out
+# TC003 - User log out
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -16,9 +16,9 @@ try:
     time.sleep(2)
 
     # Enter the data to be uploaded
-    email = 'username5555@gmail.com'
-    username = 'username5555'
-    pwd = 'Username5555'
+    email = 'testuser1@example.com'
+    username = 'testuser1'
+    pwd = 'Abcd123$'
 
 
     # Driver find

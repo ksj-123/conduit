@@ -21,14 +21,14 @@ def find(xpath):
 extracted_date = []
 
 try:
-    # Oldal betöltése
-    driver.get('http://localhost:1667/')
-    time.sleep(2)
+    # Load page
+    driver.get("http://localhost:1667/")
+    time.sleep(3)
 
-    # Feltöltendő adatok megadása
-    email = 'username5005@gmail.com'
-    username = 'username5005'
-    pwd = 'Username5005'
+    # Enter the data to be uploaded
+    email = 'testuser1@example.com'
+    username = 'testuser1'
+    pwd = 'Abcd123$'
 
 
     # Driver find

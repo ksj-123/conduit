@@ -41,7 +41,7 @@ try:
     print(reg)
     time.sleep(5)
 
-    Check box
+    # Check box
     assert ('Welcome!' in find('/html/body/div[2]/div/div[2]').text)
     time.sleep(5)
     find("/html/body/div[2]/div/div[4]/div/button").click()

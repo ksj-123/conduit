@@ -11,21 +11,22 @@ driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
 driver.set_window_size(1000, 600, 600)
 
 try:
-    # Oldal betöltése
+    # Load page
     driver.get("http://localhost:1667/")
     time.sleep(3)
 
-    # Feltöltendő adatok megadása
-    email = 'username5005@gmail.com'
-    pwd = 'Username5005'
+    # Enter the data to be uploaded
+    email = 'testuser1@example.com'
+    username = 'testuser1'
+    pwd = 'Abcd123$'
 
-    # Post mezők xpath
+    # Button xpath
     title_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[1]/input'
     about_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[2]/input'
     write_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[3]/textarea'
     tags_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[4]/div/div/ul/li/input'
 
-    # Teszt adatok
+    # Test data
     title_2 = 'Blog mod'
     about_2 = 'Blog'
     write_2 = 'Ez nem mese'
