@@ -50,6 +50,11 @@ try:
     sign_in(email, pwd)
     time.sleep(2)
 
+    # Check box
+    assert username == find(username_x).text
+    print(username)
+    time.sleep(2)
+
 
     # Favourit
     def favourit():
