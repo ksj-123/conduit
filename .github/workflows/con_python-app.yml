@@ -51,20 +51,16 @@ jobs:
 
       - run: docker-compose up -d
 
+      - name: Sleep for 80 seconds
+        run: sleep 80s
+        shell: bash
+
       - name: Install seleniumbase
         run: pip install seleniumbase
 
       - name: Install chromedriver
         run: |
           seleniumbase install chromedriver
-
-      - name: Run Tests
-        run: |
-          selenium-side-runner -c "browserName=chrome goog:chromeOptions.args=[disable-infobars, headless]" test.side
-
-      - name: Sleep for 80 seconds
-        run: sleep 80s
-        shell: bash
 
       - name: Archive execution artifacts
         uses: actions/upload-artifact@v2
