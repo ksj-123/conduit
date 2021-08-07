@@ -20,11 +20,16 @@ try:
     username = 'testuser1'
     pwd = 'Abcd123$'
 
-    # Post fields xpath
-    title_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[1]/input'
-    about_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[2]/input'
-    write_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[3]/textarea'
-    tags_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[4]/div/div/ul/li/input'
+    # Fields xpath
+    email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
+    pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
+    username_x = '//*[@id="app"]/nav/div/ul/li[4]/a'
+    sign_button_x = '//*[@id="app"]/nav/div/ul/li[2]/a'
+    sign_in_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
+    mytitle_btn_x = '//*[@id="app"]/div/div[2]/div/div/div[1]/ul/li[1]/a'
+    posttilte_x = '//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a/h1'
+    delete_btn_x = '//*[@id="app"]/div/div[1]/div/div/span/button/span'
+    article_preview = '//*[@class="article-preview"]'
 
 
     # Driver find
@@ -35,27 +40,37 @@ try:
 
     # Sign in
     def sign_in(email, pwd):
-        sign_button = find('//*[@id="app"]/nav/div/ul/li[2]/a')
+        sign_button = find(sign_button_x)
         sign_button.click()
-        find('//*[@id="app"]/div/div/div/div/form/fieldset[1]/input').send_keys(email)
-        find('//*[@id="app"]/div/div/div/div/form/fieldset[2]/input').send_keys(pwd)
-        sign_in_btn = find('//*[@id="app"]/div/div/div/div/form/button')
+        find(email_x).send_keys(email)
+        find(pwd_x).send_keys(pwd)
+        sign_in_btn = find(sign_in_btn_x)
         sign_in_btn.click()
         time.sleep(2)
 
 
     sign_in(email, pwd)
-    time.sleep(3)
+    time.sleep(2)
+
+    # Post find
+    find(username_x).click()  # username click
+    time.sleep(2)
+    find(mytitle_btn_x).click()  # my title click
+    time.sleep(2)
+
+    article_number = driver.find_elements_by_xpath(article_preview)
+    print(len(article_number))
+    original_num = int(len(article_number))
+
 
     # Post delete
     def delete():
-        find('//*[@id="app"]/nav/div/ul/li[4]/a').click()  # username click
+
+        find(posttilte_x).click()  # post title click
         time.sleep(2)
-        find('//*[@id="app"]/div/div[2]/div/div/div[1]/ul/li[1]/a').click()  # my title click
+        find(delete_btn_x).click()  # delete button click
         time.sleep(2)
-        find('//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a/h1').click()  # post title click
-        time.sleep(2)
-        find('//*[@id="app"]/div/div[1]/div/div/span/button/span').click()  # delete button click
+        find(username_x).click()  # username click
         time.sleep(2)
 
 
@@ -63,10 +78,12 @@ try:
     print(delete)
     time.sleep(2)
 
-
     # Control
-    # assert
-
+    article_number = driver.find_elements_by_xpath(article_preview)
+    print(len(article_number))
+    new_num = int(len(article_number))
+    print(new_num)
+    assert new_num + 1 == original_num
 
 finally:
     driver.close()

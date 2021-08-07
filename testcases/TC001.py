@@ -17,6 +17,12 @@ def find(xpath):
     find = driver.find_element_by_xpath(xpath)
     return find
 
+# Fields xpath
+sign_up_btn = '//*[@id="app"]/nav/div/ul/li[3]/a'
+username_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
+email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
+pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[3]/input'
+sign_up_x = '//*[@id="app"]/div/div/div/div/form/button'
 
 # Enter the data to be uploaded
 email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10))+'@mail.com'
@@ -25,16 +31,17 @@ username = ''.join((random.choice(string.ascii_letters + string.digits) for i in
 
 try:
     # Load page
-    driver.get("http://localhost:1667/")
+    URL = driver.get("http://localhost:1667/")
+    time.sleep(2)
 
     # Sign up
     def reg():
-        find('//*[@id="app"]/nav/div/ul/li[3]/a').click()
+        find(sign_up_btn).click()
         time.sleep(2)
-        find('//*[@id="app"]/div/div/div/div/form/fieldset[1]/input').send_keys(username)
-        find('//*[@id="app"]/div/div/div/div/form/fieldset[2]/input').send_keys(email)
-        find('//*[@id="app"]/div/div/div/div/form/fieldset[3]/input').send_keys(pwd)
-        sign_up = find('//*[@id="app"]/div/div/div/div/form/button')
+        find(username_x).send_keys(username)
+        find(email_x).send_keys(email)
+        find(pwd_x).send_keys(pwd)
+        sign_up = find(sign_up_x)
         sign_up.click()
 
     reg()

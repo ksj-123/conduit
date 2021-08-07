@@ -12,6 +12,21 @@ opt.headless = False
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
 driver.set_window_size(1000, 500, 500)
 
+# Enter the data to be uploaded
+email = 'testuser1@example.com'
+username = 'testuser1'
+pwd = 'Abcd123$'
+
+# Fields xpath
+email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
+pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
+username_x = '//*[@id="app"]/nav/div/ul/li[4]/a'
+sign_button_x = '//*[@id="app"]/nav/div/ul/li[2]/a'
+sign_in_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
+pagination_x = '//*[@id="app"]/div/div[2]/div/div[1]/div[2]/div/div/nav/ul'
+article_preview = '//*[@class="article-preview"]'
+page_btn = '//*[@class="page-link"]'
+
 
 def find(xpath):
     find = driver.find_element_by_xpath(xpath)
@@ -22,13 +37,8 @@ extracted_date = []
 
 try:
     # Load page
-    driver.get("http://localhost:1667/")
+    URL = driver.get("http://localhost:1667/")
     time.sleep(3)
-
-    # Enter the data to be uploaded
-    email = 'testuser1@example.com'
-    username = 'testuser1'
-    pwd = 'Abcd123$'
 
 
     # Driver find
@@ -39,11 +49,11 @@ try:
 
     # Sign in
     def sign_in(email, pwd):
-        sign_button = find('//*[@id="app"]/nav/div/ul/li[2]/a')
+        sign_button = find(sign_button_x)
         sign_button.click()
-        find('//*[@id="app"]/div/div/div/div/form/fieldset[1]/input').send_keys(email)
-        find('//*[@id="app"]/div/div/div/div/form/fieldset[2]/input').send_keys(pwd)
-        sign_in_btn = find('//*[@id="app"]/div/div/div/div/form/button')
+        find(email_x).send_keys(email)
+        find(pwd_x).send_keys(pwd)
+        sign_in_btn = find(sign_in_btn_x)
         sign_in_btn.click()
         time.sleep(2)
 
@@ -52,24 +62,20 @@ try:
     time.sleep(2)
 
     # Global feed
-    while True:
-        time.sleep(2)
-        table = find('//*[@id="app"]/div/div[2]')
-        rows = table.find_elements_by_xpath('//*[@id="app"]/div/div[2]/div/div[1]/div[2]/div/div/div[1]')
-        for row in rows:
-            data_row = {}
-            for i in range:
-                cells = row.find_elements_by_xpath(f"//div[{i + 1}]/a/h1")
-                data_row['title'] = cells[0].text
-                extracted_date.append(data_row)
-                for i in next_button:
-                    find(f"//li[{i + 1}]/a").click()
-                    if not next_button.is_enabled():
-                        break
-                    else:
-                        next_button.click()
-                pprint.pprint(extracted_date)
-                print(len(extracted_date))
+    for row in rows:
+        data_row = {}
+        for i in range:
+            cells = row.find_elements_by_xpath(f"//div[{i + 1}]/a/h1")
+            data_row['title'] = cells[0].text
+            extracted_date.append(data_row)
+            for i in next_button:
+                find(f"//li[{i + 1}]/a").click()
+                if not next_button.is_enabled():
+                    break
+                else:
+                    next_button.click()
+            pprint.pprint(extracted_date)
+            print(len(extracted_date))
 
 
 finally:
