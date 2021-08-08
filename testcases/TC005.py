@@ -76,22 +76,21 @@ try:
         driver.back()
 
 
-    def check_post(row):
-        find(home_btn).click()  # Home button click
-        find(post_x).send_keys(row[0])
-        print(row[0])
-        driver.back()
-        # title = driver.find_element_by_link_text(row[''][0])  # Find new blog link
-        # print(title)
+    # for _url_title_list:
 
-
-    #     # 'http://localhost:1667/#/articles/ez-egy-uj-blog'
+    # def check_post(row):
+    #     find(home_btn).click()  # Home button click
+    #     title = find(post_x).send_keys(row[0])
+    #     expect_url 'http://localhost:1667/#/articles/{title.lower }'
+    #     print(row[0])
+    #     driver.back()
+    #     # title = driver.find_element_by_link_text(row[''][0])  # Find new blog link
+    #     # print(title)
+    #     url_title = row[0]
+    #
+    # #     # 'http://localhost:1667/#/articles/ez-egy-uj-blog'
     #
     #     lines = csv.readlines()
-    #
-    #
-    # for line in lines[1:]:
-    #     print(line("\n", "").split('-'))
 
     # Write new post
     def new_post():
@@ -100,12 +99,18 @@ try:
             next(csvreader)
             for row in csvreader:
                 creat_post(row)
-                check_post(row)
+                url_title_list = []
+                url_title_list.append(row[0].replace(" ", "-"))
 
 
     time.sleep(2)
+    new_post()
+    print(url_title_list)
 
-
+    # for i in url_title_list:
+    #     assert 'http://localhost:1667/#/articles/{_}' == driver.current_url()
+    #     print('http://localhost:1667/#/articles/{_}')
+    #     print(driver.current_url())
 
 finally:
     pass
