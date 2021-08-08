@@ -4,7 +4,6 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 import time
 import csv
-import string
 
 opt = Options()
 opt.headless = False
@@ -31,12 +30,14 @@ title_x = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[1]/input'
 about_x = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[2]/input'
 write_x = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[3]/textarea'
 tags_x = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[4]/div/div/ul/li/input'
+post_x = '//*[@class="article-preview"]'
 
 # Button xpath
 sign_btn = '//*[@id="app"]/nav/div/ul/li[2]/a'
 sign_inbtn = '//*[@id="app"]/div/div/div/div/form/button'
 new_artbtn = '//*[@id="app"]/nav/div/ul/li[2]/a'
 publish = '//*[@id="app"]/div/div/div/div/form/button'
+home_btn = '//*[@id="app"]/nav/div/ul/li[1]/a'
 
 
 # Driver find
@@ -76,14 +77,16 @@ try:
 
 
     def check_post(row):
-        # 'http://localhost:1667/#/articles/ez-egy-uj-blog'
+        find(home_btn).click()  # Home button click
+        find(post_x).send_keys(row[0])
+        print(row[0])
+        driver.back()
+        # title = driver.find_element_by_link_text(row[''][0])  # Find new blog link
+        # print(title)
 
-        find('//*[@id="app"]/nav/div/ul/li[1]/a').click()  # Home button click
 
-        title = driver.find_element_by_link_text(row[''][0])  # Find new blog link
-        print(title)
-
-
+    #     # 'http://localhost:1667/#/articles/ez-egy-uj-blog'
+    #
     #     lines = csv.readlines()
     #
     #
@@ -101,6 +104,8 @@ try:
 
 
     time.sleep(2)
+
+
 
 finally:
     pass
