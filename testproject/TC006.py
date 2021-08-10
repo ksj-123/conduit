@@ -10,6 +10,10 @@ opt.headless = False
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
 driver.set_window_size(1000, 500, 500)
 
+# Load page
+driver.get('http://localhost:1667/')
+time.sleep(2)
+
 
 # Driver find
 def find(xpath):
@@ -36,10 +40,6 @@ comment_btn_x = '//*[@id="app"]/div/div[2]/div[2]/div/div/form/div[2]/button'
 comment_text_x = '//*[@id="app"]/div/div[2]/div[2]/div/div[2]/div[1]/p'
 
 try:
-    # Load page
-    driver.get('http://localhost:1667/')
-    time.sleep(2)
-
 
     # Sign in
     def sign_in(email, pwd):

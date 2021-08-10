@@ -9,13 +9,14 @@ import string
 opt = Options()
 opt.headless = False
 
-driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
+driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=opt)
 driver.set_window_size(1000, 500, 500)
 
 
 def find(xpath):
     find = driver.find_element_by_xpath(xpath)
     return find
+
 
 # Fields xpath
 sign_up_btn = '//*[@id="app"]/nav/div/ul/li[3]/a'
@@ -25,7 +26,7 @@ pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[3]/input'
 sign_up_x = '//*[@id="app"]/div/div/div/div/form/button'
 
 # Enter the data to be uploaded
-email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10))+'@mail.com'
+email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@mail.com'
 pwd = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
 username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
 
@@ -33,6 +34,7 @@ try:
     # Load page
     URL = driver.get("http://localhost:1667/")
     time.sleep(2)
+
 
     # Sign up
     def reg():
@@ -43,6 +45,7 @@ try:
         find(pwd_x).send_keys(pwd)
         sign_up = find(sign_up_x)
         sign_up.click()
+
 
     reg()
     print(reg)

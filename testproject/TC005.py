@@ -42,8 +42,8 @@ home_btn = '//*[@id="app"]/nav/div/ul/li[1]/a'
 
 # Driver find
 def find(xpath):
-    find = driver.find_element_by_xpath(xpath)
-    return find
+    elem = driver.find_element_by_xpath(xpath)
+    return elem
 
 
 # Sign in
@@ -61,57 +61,51 @@ sign_in(email, pwd)
 time.sleep(3)
 
 assert username == find(username_x).text
-print(username)
+# print(username)
 time.sleep(2)
 
 try:
-    def creat_post(row):
-        find(new_artbtn).click()
-        print(row)
-        find(title_x).send_keys(row[0])
-        find(about_x).send_keys(row[1])
-        find(write_x).send_keys(row[2])
-        find(tags_x).send_keys(row[3])
-        find(publish).click()
-        driver.back()
+    url_title_list = []
 
 
-    # for _url_title_list:
-
-    # def check_post(row):
-    #     find(home_btn).click()  # Home button click
-    #     title = find(post_x).send_keys(row[0])
-    #     expect_url 'http://localhost:1667/#/articles/{title.lower }'
-    #     print(row[0])
-    #     driver.back()
-    #     # title = driver.find_element_by_link_text(row[''][0])  # Find new blog link
-    #     # print(title)
-    #     url_title = row[0]
-    #
-    # #     # 'http://localhost:1667/#/articles/ez-egy-uj-blog'
-    #
-    #     lines = csv.readlines()
-
-    # Write new post
-    def new_post():
-        with open('../text/post.csv') as csvfile:
+    def creat_post():
+        time.sleep(4)
+        with open('post.csv') as csvfile:
             csvreader = csv.reader(csvfile)
             next(csvreader)
             for row in csvreader:
-                creat_post(row)
-                url_title_list = []
-                url_title_list.append(row[0].replace(" ", "-"))
+                find(new_artbtn).click()
+                time.sleep(3)
+                find(title_x).send_keys(row[0])
+                find(about_x).send_keys(row[1])
+                find(write_x).send_keys(row[2])
+                find(tags_x).send_keys(row[3])
+                find(publish).click()
+                url_title_list.append(row[0].replace(" ", "-").lower())
+                time.sleep(3)
 
 
-    time.sleep(2)
-    new_post()
-    print(url_title_list)
+    creat_post()
 
-    # for i in url_title_list:
-    #     assert 'http://localhost:1667/#/articles/{_}' == driver.current_url()
-    #     print('http://localhost:1667/#/articles/{_}')
-    #     print(driver.current_url())
+    # Check URL
+    time.sleep(3)
+    testuser1_link = find(username_x)
+    testuser1_link.click()
+    time.sleep(3)
 
+    # Attributes of the created blogs
+    # (from index 5 because there is another one created for 'testuser1')
+    blogs_href = driver.find_elements_by_xpath('//div//a[@class="preview-link"]')
+    urls = []
+    for _ in blogs_href[5:]:
+        # print(_.get_attribute("href"))
+        urls.append(_.get_attribute("href"))
+    # print(urls)
+
+    # Check URL
+    for i, j in zip(url_title_list, urls):
+        assert f'http://localhost:1667/#/articles/{i}' == j
+        # print(f'http://localhost:1667/#/articles/{i}')
+        # print(j)
 finally:
-    pass
-#     driver.close()
+    driver.close()

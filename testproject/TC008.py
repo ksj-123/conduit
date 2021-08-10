@@ -10,34 +10,34 @@ opt.headless = False
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
 driver.set_window_size(1000, 600, 600)
 
+# Load page
+driver.get("http://localhost:1667/")
+time.sleep(3)
+
+# Enter the data to be uploaded
+email = 'testuser1@example.com'
+username = 'testuser1'
+pwd = 'Abcd123$'
+
+# Fields xpath
+email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
+pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
+username_x = '//*[@id="app"]/nav/div/ul/li[4]/a'
+sign_button_x = '//*[@id="app"]/nav/div/ul/li[2]/a'
+sign_in_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
+mytitle_btn_x = '//*[@id="app"]/div/div[2]/div/div/div[1]/ul/li[1]/a'
+posttilte_x = '//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a/h1'
+delete_btn_x = '//*[@id="app"]/div/div[1]/div/div/span/button/span'
+article_preview = '//*[@class="article-preview"]'
+
+
+# Driver find
+def find(xpath):
+    find = driver.find_element_by_xpath(xpath)
+    return find
+
+
 try:
-    # Load page
-    driver.get("http://localhost:1667/")
-    time.sleep(3)
-
-    # Enter the data to be uploaded
-    email = 'testuser1@example.com'
-    username = 'testuser1'
-    pwd = 'Abcd123$'
-
-    # Fields xpath
-    email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
-    pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
-    username_x = '//*[@id="app"]/nav/div/ul/li[4]/a'
-    sign_button_x = '//*[@id="app"]/nav/div/ul/li[2]/a'
-    sign_in_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
-    mytitle_btn_x = '//*[@id="app"]/div/div[2]/div/div/div[1]/ul/li[1]/a'
-    posttilte_x = '//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a/h1'
-    delete_btn_x = '//*[@id="app"]/div/div[1]/div/div/span/button/span'
-    article_preview = '//*[@class="article-preview"]'
-
-
-    # Driver find
-    def find(xpath):
-        find = driver.find_element_by_xpath(xpath)
-        return find
-
-
     # Sign in
     def sign_in(email, pwd):
         sign_button = find(sign_button_x)

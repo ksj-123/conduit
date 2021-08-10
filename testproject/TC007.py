@@ -10,44 +10,45 @@ opt.headless = False
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
 driver.set_window_size(1000, 600, 600)
 
+# Load page
+driver.get("http://localhost:1667/")
+time.sleep(3)
+
+# Enter the data to be uploaded
+email = 'testuser1@example.com'
+username = 'testuser1'
+pwd = 'Abcd123$'
+
+# Fields xpath
+email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
+pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
+username_x = '//*[@id="app"]/nav/div/ul/li[4]/a'
+sign_button_x = '//*[@id="app"]/nav/div/ul/li[2]/a'
+sign_in_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
+my_title_x = '//*[@id="app"]/div/div[2]/div/div/div[1]/ul/li[1]/a'
+post_tilte_x = '//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a/h1'
+title_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[1]/input'
+about_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[2]/input'
+write_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[3]/textarea'
+tags_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[4]/div/div/ul/li/input'
+edit_xp = '//*[@id="app"]/div/div[1]/div/div/span/a'
+tags_btn_x = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[4]/div/div/ul/li[1]/div[2]/i[2]'
+publish_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
+
+# Test data
+title_2 = 'Blog mod'
+about_2 = 'Blog'
+write_2 = 'Ez nem mese'
+tags_2 = 'Rémálom'
+
+
+# Driver find
+def find(xpath):
+    find = driver.find_element_by_xpath(xpath)
+    return find
+
+
 try:
-    # Load page
-    driver.get("http://localhost:1667/")
-    time.sleep(3)
-
-    # Enter the data to be uploaded
-    email = 'testuser1@example.com'
-    username = 'testuser1'
-    pwd = 'Abcd123$'
-
-    # Fields xpath
-    email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
-    pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
-    username_x = '//*[@id="app"]/nav/div/ul/li[4]/a'
-    sign_button_x = '//*[@id="app"]/nav/div/ul/li[2]/a'
-    sign_in_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
-    my_title_x = '//*[@id="app"]/div/div[2]/div/div/div[1]/ul/li[1]/a'
-    post_tilte_x = '//*[@id="app"]/div/div[2]/div/div/div[2]/div/div/div[1]/a/h1'
-    title_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[1]/input'
-    about_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[2]/input'
-    write_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[3]/textarea'
-    tags_xp = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[4]/div/div/ul/li/input'
-    edit_xp = '//*[@id="app"]/div/div[1]/div/div/span/a'
-    tags_btn_x = '//*[@id="app"]/div/div/div/div/form/fieldset/fieldset[4]/div/div/ul/li[1]/div[2]/i[2]'
-    publish_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
-
-    # Test data
-    title_2 = 'Blog mod'
-    about_2 = 'Blog'
-    write_2 = 'Ez nem mese'
-    tags_2 = 'Rémálom'
-
-
-    # Driver find
-    def find(xpath):
-        find = driver.find_element_by_xpath(xpath)
-        return find
-
 
     # Sign in
     def sign_in(email, pwd):
