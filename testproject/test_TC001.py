@@ -5,19 +5,15 @@ from selenium.webdriver.chrome.options import Options
 import time
 import random
 import string
+from selenium.webdriver.common.by import By
 
-opt = Options()
-opt.headless = False
+options = Options()
+options.headless = True
 
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=opt)
-
-
-def find(xpath):
-    find = driver.find_element_by_xpath(xpath)
-    return find
+driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
 
 
-def reg():
+def test_reg():
     # Load page
     driver.get("http://localhost:1667/")
     time.sleep(5)
@@ -35,19 +31,18 @@ def reg():
     username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
 
     # Sign up
-    find(sign_up_btn).click()
+    driver.find_element(By.XPATH, sign_up_btn).click()
     time.sleep(2)
-    find(username_x).send_keys(username)
-    find(email_x).send_keys(email)
-    find(pwd_x).send_keys(pwd)
-    sign_up = find(sign_up_x)
-    sign_up.click()
-
-    reg()
-    print(reg)
+    driver.find_element(By.XPATH, username_x).send_keys(username)
+    driver.find_element(By.XPATH, email_x).send_keys(email)
+    driver.find_element(By.XPATH, pwd_x).send_keys(pwd)
+    driver.find_element(By.XPATH, sign_up_x).click()
     time.sleep(5)
 
     # Check box
-    assert ('Welcome!' in find('/html/body/div[2]/div/div[2]').text)
+    assert ('Welcome!' in driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]').text)
     time.sleep(5)
-    find("/html/body/div[2]/div/div[4]/div/button").click()
+    driver.find_element(By.XPATH, "/html/body/div[2]/div/div[4]/div/button").click()
+
+    driver.close()
+    driver.quit()
