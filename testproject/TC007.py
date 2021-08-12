@@ -1,4 +1,4 @@
-# TC007 - Blog bejegyzés módosítása
+# TC007 - Edit blog post
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -93,7 +93,7 @@ try:
 
 
     edit()
-    print(edit)
+
     time.sleep(2)
 
     # Controll

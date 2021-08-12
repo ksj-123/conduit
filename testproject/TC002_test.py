@@ -1,23 +1,18 @@
-# TC002 - User log in
+# TC002_test - User log in (pytest)
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 import time
 
-opt = Options()
-opt.headless = False
 
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=opt)
-driver.set_window_size(1000, 500, 500)
+options = Options()
+options.headless = True
 
-
-# Driver find
-def find(xpath):
-    find = driver.find_element_by_xpath(xpath)
-    return find
+driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
 
 
-def sign_in(email, pwd):
+def test_login():
     # Load page
     driver.get('http://localhost:1667/')
     time.sleep(5)
@@ -35,15 +30,13 @@ def sign_in(email, pwd):
     sign_in_btn_x = '//*[@id="app"]/div/div/div/div/form/button'
 
     # Sign in
-    sign_button = find(sign_button_x)
-    sign_button.click()
-    find(email_x).send_keys(email)
-    find(pwd_x).send_keys(pwd)
-    sign_in_btn = find(sign_in_btn_x)
-    sign_in_btn.click()
+    driver.find_element(By.XPATH, sign_button_x).click()
+    driver.find_element(By.XPATH, email_x).send_keys(email)
+    driver.find_element(By.XPATH, pwd_x).send_keys(pwd)
+    driver.find_element(By.XPATH, sign_in_btn_x).click()
     time.sleep(2)
 
     # Check box
-    assert username == find(username_x).text
-    print(username)
+    assert username == driver.find_element(By.XPATH, username_x).text
     time.sleep(2)
+

@@ -1,19 +1,18 @@
-# TC001 - User Registration (random data)
+# TC001_test - User Registration (random data) (pytest)
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 import time
 import random
 import string
-from selenium.webdriver.common.by import By
 
 options = Options()
 options.headless = True
 
-driver = webdriver.Chrome(executable_path=ChromeDriverManager().install(), options=options)
-
 
 def test_reg():
+    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
     # Load page
     driver.get("http://localhost:1667/")
     time.sleep(5)
