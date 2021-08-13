@@ -11,37 +11,39 @@ options = Options()
 options.headless = True
 
 
-def test_reg():
-    driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
-    # Load page
-    driver.get("http://localhost:1667/")
-    time.sleep(5)
+class TestUserReg(object):
+    def test_setup(self):
+        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
+        # Load page
+        self.driver.get("http://localhost:1667/")
+        time.sleep(8)
 
-    # Fields xpath
-    sign_up_btn = '//*[@id="app"]/nav/div/ul/li[3]/a'
-    username_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
-    email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
-    pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[3]/input'
-    sign_up_x = '//*[@id="app"]/div/div/div/div/form/button'
+        # Fields xpath
+        sign_up_btn = '//*[@id="app"]/nav/div/ul/li[3]/a'
+        username_x = '//*[@id="app"]/div/div/div/div/form/fieldset[1]/input'
+        email_x = '//*[@id="app"]/div/div/div/div/form/fieldset[2]/input'
+        pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[3]/input'
+        sign_up_x = '//*[@id="app"]/div/div/div/div/form/button'
 
-    # Enter the data to be uploaded
-    email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@mail.com'
-    pwd = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
-    username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
+        # Enter the data to be uploaded
+        email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@mail.com'
+        pwd = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
+        username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
 
-    # Sign up
-    driver.find_element(By.XPATH, sign_up_btn).click()
-    time.sleep(2)
-    driver.find_element(By.XPATH, username_x).send_keys(username)
-    driver.find_element(By.XPATH, email_x).send_keys(email)
-    driver.find_element(By.XPATH, pwd_x).send_keys(pwd)
-    driver.find_element(By.XPATH, sign_up_x).click()
-    time.sleep(5)
+        # Sign up
+        self.driver.find_element(By.XPATH, sign_up_btn).click()
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, username_x).send_keys(username)
+        self.driver.find_element(By.XPATH, email_x).send_keys(email)
 
-    # Check box
-    assert ('Welcome!' in driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]').text)
-    time.sleep(5)
-    driver.find_element(By.XPATH, "/html/body/div[2]/div/div[4]/div/button").click()
+        self.driver.find_element(By.XPATH, pwd_x).send_keys(pwd)
+        self.driver.find_element(By.XPATH, sign_up_x).click()
+        time.sleep(5)
 
-    driver.close()
-    driver.quit()
+        # Check box
+        assert ('Welcome!' in self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]').text)
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, "/html/body/div[2]/div/div[4]/div/button").click()
+
+        self.driver.close()
+        self.driver.quit()

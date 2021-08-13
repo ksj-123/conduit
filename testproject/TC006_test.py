@@ -11,7 +11,6 @@ opt.headless = True
 
 def test_comment():
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
-    driver.set_window_size(1000, 500, 500)
 
     # Load page
     driver.get('http://localhost:1667/')

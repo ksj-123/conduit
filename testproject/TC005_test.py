@@ -12,7 +12,6 @@ opt.headless = True
 
 def test_new_blog():
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
-    driver.set_window_size(1000, 600, 600)
 
     # Load page
     driver.get("http://localhost:1667/")

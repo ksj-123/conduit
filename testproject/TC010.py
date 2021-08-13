@@ -62,22 +62,18 @@ try:
     time.sleep(2)
 
     # Global feed
-    for row in rows:
-        data_row = {}
-        for i in range:
-            cells = row.find_elements_by_xpath(f"//div[{i + 1}]/a/h1")
-            data_row['title'] = cells[0].text
-            extracted_date.append(data_row)
-            for i in next_button:
-                find(f"//li[{i + 1}]/a").click()
-                if not next_button.is_enabled():
-                    break
-                else:
-                    next_button.click()
-            pprint.pprint(extracted_date)
-            print(len(extracted_date))
-
+    pages = driver.find_elements_by_class_name('page-link')
+    for p in range(len(pages)):
+        pages[p].click()
+        time.sleep(1)
+        articles = driver.find_elements_by_xpath('//div[@class="article-preview"]')
+        print(f"{p + 1}. oldal bejegyzései: {len(articles)} db")
+        time.sleep(1)
+        for a in articles:
+            # data_row = {}
+            title = a.find_element_by_tag_name('h1').text
+            date = a.find_element_by_class_name('date').text
+            print(title, date)
 
 finally:
-    pass
-    # driver.close()
+    driver.close()

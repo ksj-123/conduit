@@ -33,7 +33,7 @@ username = ''.join((random.choice(string.ascii_letters + string.digits) for i in
 try:
     # Load page
     URL = driver.get("http://localhost:1667/")
-    time.sleep(2)
+    time.sleep(5)
 
 
     # Sign up
