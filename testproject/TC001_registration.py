@@ -1,4 +1,6 @@
 # TC001 - User Registration (random data)
+import csv
+
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -26,29 +28,32 @@ pwd_x = '//*[@id="app"]/div/div/div/div/form/fieldset[3]/input'
 sign_up_x = '//*[@id="app"]/div/div/div/div/form/button'
 
 # Enter the data to be uploaded
-email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@mail.com'
-pwd = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
-username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
+email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(12)) + '@mail.com'
+pwd = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(18)))
+username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(12)))
 
 try:
     # Load page
     URL = driver.get("http://localhost:1667/")
-    time.sleep(5)
+    time.sleep(8)
 
 
     # Sign up
     def reg():
         find(sign_up_btn).click()
-        time.sleep(2)
+        time.sleep(5)
         find(username_x).send_keys(username)
         find(email_x).send_keys(email)
         find(pwd_x).send_keys(pwd)
+        with open("C:\\Users\\User\\PycharmProjects\\conduit\\reg_data.csv", mode="w") as file:
+            file.write(username + "," + email + "," + pwd)  # write registration data to a .csv file
+        print(username, email, pwd)
         sign_up = find(sign_up_x)
         sign_up.click()
 
 
     reg()
-    print(reg)
+
     time.sleep(5)
 
     # Check box

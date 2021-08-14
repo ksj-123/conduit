@@ -35,8 +35,9 @@ class TestUserReg(object):
         time.sleep(5)
         self.driver.find_element(By.XPATH, username_x).send_keys(username)
         self.driver.find_element(By.XPATH, email_x).send_keys(email)
-
         self.driver.find_element(By.XPATH, pwd_x).send_keys(pwd)
+        with open("C:\\Users\\User\\PycharmProjects\\conduit\\reg_data2.csv", mode="w") as file:
+            file.write(username + "," + email + "," + pwd)
         self.driver.find_element(By.XPATH, sign_up_x).click()
         time.sleep(5)
 
