@@ -33,7 +33,6 @@ idna==3.2
 iniconfig==1.1.1
 ipdb==0.13.9
 ipython==7.26.0
-iptython-genutils==0.2.0
 jedi==0.18.0
 lxml==4.6.3
 matplotlib-inline==0.1.2
