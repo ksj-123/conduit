@@ -1,4 +1,4 @@
-# TC005_test - New blog post (pytest)
+# TC006_test - New blog post (pytest)
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -53,7 +53,7 @@ def test_new_blog():
 
     url_title_list = []
 
-    with open('post.csv') as csvfile:
+    with open('C:\\Users\\User\\PycharmProjects\\conduit\\post.csv') as csvfile:
         csvreader = csv.reader(csvfile)
         next(csvreader)
         for row in csvreader:
@@ -77,9 +77,12 @@ def test_new_blog():
     # (from index 5 because there is another one created for 'testuser1')
     blogs_href = driver.find_elements(By.XPATH, '//div//a[@class="preview-link"]')
     urls = []
-    for _ in blogs_href[5:]:
-        urls.append(_.get_attribute("href"))
+    for b in blogs_href[5:]:
+        urls.append(b.get_attribute("href"))
 
     # Check URL
     for i, j in zip(url_title_list, urls):
         assert f'http://localhost:1667/#/articles/{i}' == j
+
+    driver.close()
+    driver.quit()

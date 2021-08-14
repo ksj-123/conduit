@@ -1,4 +1,4 @@
-# TC005 - New blog post
+# TC006 - New blog post
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -70,7 +70,7 @@ try:
 
     def creat_post():
         time.sleep(4)
-        with open('post.csv') as csvfile:
+        with open('C:\\Users\\User\\PycharmProjects\\conduit\\post.csv') as csvfile:
             csvreader = csv.reader(csvfile)
             next(csvreader)
             for row in csvreader:
@@ -97,9 +97,9 @@ try:
     # (from index 5 because there is another one created for 'testuser1')
     blogs_href = driver.find_elements_by_xpath('//div//a[@class="preview-link"]')
     urls = []
-    for _ in blogs_href[5:]:
+    for b in blogs_href[5:]:
         # print(_.get_attribute("href"))
-        urls.append(_.get_attribute("href"))
+        urls.append(b.get_attribute("href"))
     # print(urls)
 
     # Check URL
