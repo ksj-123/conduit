@@ -14,10 +14,12 @@ driver.set_window_size(1000, 500, 500)
 driver.get('http://localhost:1667/')
 time.sleep(2)
 
+
 # Driver find
 def find(xpath):
     find = driver.find_element_by_xpath(xpath)
     return find
+
 
 # Enter the data to be uploaded
 email = 'testuser1@example.com'

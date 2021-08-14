@@ -40,3 +40,5 @@ def test_login():
     assert username == driver.find_element(By.XPATH, username_x).text
     time.sleep(2)
 
+    driver.close()
+    driver.quit()
