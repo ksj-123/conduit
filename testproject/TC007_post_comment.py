@@ -1,4 +1,4 @@
-# TC006 - Post comment
+# TC007 - Post comment
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -67,7 +67,6 @@ try:
 
 
     view()
-    print(view)
     time.sleep(2)
 
 
@@ -77,8 +76,8 @@ try:
         find(comment_btn_x).click()
 
 
+    print(comment_text)
     comment()
-    print(comment)
     time.sleep(2)
 
     # Check

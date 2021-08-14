@@ -1,4 +1,4 @@
-# TC006_test - Post comment (pytest)
+# TC007_test - Post comment (pytest)
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -14,7 +14,7 @@ def test_comment():
 
     # Load page
     driver.get('http://localhost:1667/')
-    time.sleep(2)
+    time.sleep(52)
 
     # Enter the data to be uploaded
     email = 'testuser1@example.com'
@@ -41,23 +41,27 @@ def test_comment():
     driver.find_element(By.XPATH, pwd_x).send_keys(pwd)
     sign_in_btn = driver.find_element(By.XPATH, sign_in_btn_x)
     sign_in_btn.click()
-    time.sleep(2)
+    time.sleep(5)
 
     # Check box
     assert username == driver.find_element(By.XPATH, username_x).text
-    time.sleep(2)
+    time.sleep(5)
 
     # Post view
     driver.find_element(By.XPATH, username_x).click()  # username click
-    time.sleep(2)
+    time.sleep(5)
     driver.find_element(By.XPATH, my_title_x).click()  # my title click
-    time.sleep(2)
+    time.sleep(5)
     driver.find_element(By.XPATH, post_tilte_x).click()  # post title click
-    time.sleep(2)
+    time.sleep(5)
 
     # Post comment
     driver.find_element(By.XPATH, comment_x).send_keys(comment_text)
     driver.find_element(By.XPATH, comment_btn_x).click()
+    time.sleep(5)
 
     # Check
     assert comment_text == driver.find_element(By.XPATH, comment_text_x).text
+
+    driver.close()
+    driver.quit()
