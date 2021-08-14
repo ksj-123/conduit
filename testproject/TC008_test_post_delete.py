@@ -66,3 +66,6 @@ def test_blog_delete():
     article_number = driver.find_elements(By.XPATH, article_preview)
     new_num = int(len(article_number))
     assert new_num + 1 == original_num
+
+    driver.close()
+    driver.quit()
