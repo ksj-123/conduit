@@ -6,6 +6,7 @@ async-generator==1.10
 atomicwrites==1.4.0
 attrs==21.2.0
 backcall==0.2.0
+backports.entry-points-selectable==1.1.0
 beautifulsoup4==4.9.3
 boto==2.49.0
 certifi==2021.5.30
@@ -34,17 +35,20 @@ iptython-genutils==0.2.0
 jedi==0.18.0
 matplotlib-inline==0.1.2
 more-itertools==8.8.0
+msedge-selenium-tools==3.141.3
 nodejs==0.1.1
 nose==1.3.7
 oop-training-python==0.0.1
-optional-django==0.1.0
+optional-django==0.3.0
 outcome==1.1.0
 packaging==21.0
 parameterized==0.8.1
 parso==0.8.2
 pdfminer.six==20201018
 pickleshare==0.7.5
+Pillow==8.3.1
 pip==21.2.4
+platformdirs==2.2.0
 pluggy==0.13.1
 prompt-toolkit==3.0.19
 py==1.10.0
@@ -65,6 +69,7 @@ PyVirtualDisplay==2.2
 PyYAML==5.4.1
 requests==2.26.0
 rich==10.7.0
+sbvirtualdisplay==10.7.0
 selenium==3.141.0
 seleniumbase==1.63.23
 setuptools-scm==6.0.1
@@ -78,7 +83,6 @@ tornado==6.1
 training-pkg==0.0.1
 traitlets==5.0.5
 trio==0.19.0
-trio-websocket==0.19.0
 typing-extensions==3.10.0.0
 urllib3==1.26.6
 virtualenv==20.7.2
