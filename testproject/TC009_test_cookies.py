@@ -12,7 +12,6 @@ opt.headless = True
 # Cookie
 def test_cookie():
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
-    driver.set_window_size(1000, 800, 600)
     driver.get("http://localhost:1667/")
     time.sleep(2)
 
