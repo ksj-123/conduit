@@ -1,4 +1,4 @@
-# TC003 - User log out
+# TC004 - User log out
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options

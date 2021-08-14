@@ -1,4 +1,4 @@
-# TC003_test - User log out (pytest)
+# TC004_test - User log out (pytest)
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -12,7 +12,6 @@ opt.headless = True
 # Sign in
 def test_sign_in():
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
-    driver.set_window_size(1000, 500, 500)
 
     # Load page
     driver.get('http://localhost:1667/')
@@ -50,3 +49,6 @@ def test_sign_in():
 
     # Controll
     assert username != driver.find_element(By.XPATH, '/html/body').text
+
+    driver.close()
+    driver.quit()
