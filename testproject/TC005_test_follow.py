@@ -1,4 +1,4 @@
-# TC004_test - Follow other author (pytest)
+# TC005_test - Follow other author (pytest)
 from selenium import webdriver
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
@@ -12,7 +12,6 @@ opt.headless = True
 # Sign in
 def test_follow():
     driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
-    driver.set_window_size(1000, 500, 500)
 
     # Enter the data to be uploaded
     email = 'testuser1@example.com'
@@ -44,7 +43,6 @@ def test_follow():
     assert username == driver.find_element(By.XPATH, username_x).text
     time.sleep(2)
 
-
     # Favourit
     heart = driver.find_element(By.XPATH, heart_x)
     heart.click()
@@ -54,3 +52,6 @@ def test_follow():
         print('favorite selected')
     else:
         print('not selected')
+
+    driver.close()
+    driver.quit()
