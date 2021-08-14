@@ -13,7 +13,7 @@ driver.set_window_size(1000, 600, 600)
 
 # Load page
 driver.get("http://localhost:1667/")
-time.sleep(3)
+time.sleep(8)
 
 # Enter the data to be uploaded
 email = 'testuser1@example.com'
