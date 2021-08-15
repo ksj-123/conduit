@@ -68,14 +68,14 @@ pytest-html==3.1.1
 pytest-metadata==1.11.0
 pytest-ordering==0.6
 pytest-rerunfailures==10.1
-pytest-xdist==2.3.0
+pytest-xdist==1.1
 PyVirtualDisplay==2.2
 PyYAML==5.4.1
 requests==2.26.0
 rich==10.7.0
 sbvirtualdisplay==1.0.
 selenium==3.141.0
-seleniumbase==1.63.23
+seleniumbase==1.9.0
 setuptools==57.4.0
 setuptools-scm==6.0.1
 siderunner==0.2.5
