@@ -18,8 +18,6 @@ def test_newpost():
     driver.get("http://localhost:1667/")
     time.sleep(8)
 
-    url_title_list = []
-
     # Enter the data to be uploaded
     user_name = f"Rapid{randint(1, 99)}"
     user = [user_name, f"{user_name}@gmail.com", 'PassWord@123']
@@ -52,7 +50,6 @@ def test_newpost():
                 row[2])
             driver.find_element(By.XPATH, '//*[@placeholder="Enter tags"]').send_keys(row[3])
             driver.find_element(By.XPATH, '//button[@type="submit"]').click()
-            # url_title_list.append(row[0].replace(" ", "-").lower())
             time.sleep(8)
 
         assert driver.find_element(By.TAG_NAME, "h1").text == row[0]
