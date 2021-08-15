@@ -1,1 +1,101 @@
-[ ]
+[ {
+  "uid" : "c7909dbdb7ea3263",
+  "name" : "test_follow",
+  "time" : {
+    "start" : 1629025128005,
+    "stop" : 1629025134920,
+    "duration" : 6915
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "cef9983a968ec0d",
+  "name" : "test_comment",
+  "time" : {
+    "start" : 1629025162761,
+    "stop" : 1629025202822,
+    "duration" : 40061
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "ebc7c17d5c390144",
+  "name" : "test_blog_delete",
+  "time" : {
+    "start" : 1629025202825,
+    "stop" : 1629025221843,
+    "duration" : 19018
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "64cbf9716823cdec",
+  "name" : "test_Global",
+  "time" : {
+    "start" : 1629025229623,
+    "stop" : 1629025237224,
+    "duration" : 7601
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "e4a538353f14ec7d",
+  "name" : "test_sign_in",
+  "time" : {
+    "start" : 1629025119049,
+    "stop" : 1629025128002,
+    "duration" : 8953
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "f0f792ef27b81031",
+  "name" : "test_cookie",
+  "time" : {
+    "start" : 1629025221846,
+    "stop" : 1629025229620,
+    "duration" : 7774
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "24c708f3d235a05e",
+  "name" : "test_login",
+  "time" : {
+    "start" : 1629025073489,
+    "stop" : 1629025083093,
+    "duration" : 9604
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "9060080f3812755b",
+  "name" : "test_newpost",
+  "time" : {
+    "start" : 1629025134923,
+    "stop" : 1629025162726,
+    "duration" : 27803
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "2dd1e5b5a27bf9c",
+  "name" : "test_registration",
+  "time" : {
+    "start" : 1629025044288,
+    "stop" : 1629025073485,
+    "duration" : 29197
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "2a255834cf77dac1",
+  "name" : "test_username_mod",
+  "time" : {
+    "start" : 1629025083095,
+    "stop" : 1629025119047,
+    "duration" : 35952
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]

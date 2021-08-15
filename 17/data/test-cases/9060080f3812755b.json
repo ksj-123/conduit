@@ -1,0 +1,83 @@
+{
+  "uid" : "9060080f3812755b",
+  "name" : "test_newpost",
+  "fullName" : "testproject.TC006newblog_test#test_newpost",
+  "historyId" : "ae2f8a9b956e63d205290c33a0cb2cf8",
+  "time" : {
+    "start" : 1629025134923,
+    "stop" : 1629025162726,
+    "duration" : 27803
+  },
+  "status" : "broken",
+  "statusMessage" : "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\User\\\\PycharmProjects\\\\conduit\\\\post.csv'",
+  "statusTrace" : "def test_newpost():\n        driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)\n    \n        # Load page\n        driver.get(\"http://localhost:1667/\")\n        time.sleep(8)\n    \n        url_title_list = []\n    \n        # Enter the data to be uploaded\n        user_name = f\"Rapid{randint(1, 99)}\"\n        user = [user_name, f\"{user_name}@gmail.com\", 'PassWord@123']\n    \n        # Sign up\n        driver.find_element(By.XPATH, '//a[@href=\"#/register\"]').click()\n        time.sleep(5)\n        driver.find_element(By.XPATH, '//*[@placeholder=\"Username\"]').send_keys(user[0])\n        driver.find_element(By.XPATH, '//*[@placeholder=\"Email\"]').send_keys(user[1])\n        driver.find_element(By.XPATH, '//*[@placeholder=\"Password\"]').send_keys(user[2])\n        sign_up = driver.find_element(By.XPATH, '//*[@id=\"app\"]/div/div/div/div/form/button')\n        sign_up.click()\n        time.sleep(5)\n        reg_ok = driver.find_element(By.XPATH, '/html/body/div[2]/div/div[4]/div/button')\n        reg_ok.click()\n        time.sleep(8)\n    \n        # Creat new post\n>       with open('C:\\\\Users\\\\User\\\\PycharmProjects\\\\conduit\\\\post.csv') as csvfile:\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\User\\\\PycharmProjects\\\\conduit\\\\post.csv'\n\ntestproject/TC006newblog_test.py:41: FileNotFoundError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "broken",
+    "statusMessage" : "FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\User\\\\PycharmProjects\\\\conduit\\\\post.csv'",
+    "statusTrace" : "def test_newpost():\n        driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)\n    \n        # Load page\n        driver.get(\"http://localhost:1667/\")\n        time.sleep(8)\n    \n        url_title_list = []\n    \n        # Enter the data to be uploaded\n        user_name = f\"Rapid{randint(1, 99)}\"\n        user = [user_name, f\"{user_name}@gmail.com\", 'PassWord@123']\n    \n        # Sign up\n        driver.find_element(By.XPATH, '//a[@href=\"#/register\"]').click()\n        time.sleep(5)\n        driver.find_element(By.XPATH, '//*[@placeholder=\"Username\"]').send_keys(user[0])\n        driver.find_element(By.XPATH, '//*[@placeholder=\"Email\"]').send_keys(user[1])\n        driver.find_element(By.XPATH, '//*[@placeholder=\"Password\"]').send_keys(user[2])\n        sign_up = driver.find_element(By.XPATH, '//*[@id=\"app\"]/div/div/div/div/form/button')\n        sign_up.click()\n        time.sleep(5)\n        reg_ok = driver.find_element(By.XPATH, '/html/body/div[2]/div/div[4]/div/button')\n        reg_ok.click()\n        time.sleep(8)\n    \n        # Creat new post\n>       with open('C:\\\\Users\\\\User\\\\PycharmProjects\\\\conduit\\\\post.csv') as csvfile:\nE       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\\\Users\\\\User\\\\PycharmProjects\\\\conduit\\\\post.csv'\n\ntestproject/TC006newblog_test.py:41: FileNotFoundError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "2ef153d58e5de66a",
+      "name" : "log",
+      "source" : "2ef153d58e5de66a.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "ff777cf26badbebd",
+      "name" : "stderr",
+      "source" : "ff777cf26badbebd.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject"
+  }, {
+    "name" : "suite",
+    "value" : "TC006newblog_test"
+  }, {
+    "name" : "host",
+    "value" : "fv-az28-876"
+  }, {
+    "name" : "thread",
+    "value" : "3811-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.TC006newblog_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Test defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "9060080f3812755b.json",
+  "parameterValues" : [ ]
+}
