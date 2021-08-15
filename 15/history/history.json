@@ -1,1 +1,22 @@
-{ }
+{
+  "95009f56059dd2e9b5e1b03d2289a8ea" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 1,
+      "unknown" : 0,
+      "total" : 1
+    },
+    "items" : [ {
+      "uid" : "af6fc1e48ab3e6b",
+      "reportUrl" : "https://ksj-123.github.io/conduit/15//#testresult/af6fc1e48ab3e6b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1629024391126,
+        "stop" : 1629024482517,
+        "duration" : 91391
+      }
+    } ]
+  }
+}

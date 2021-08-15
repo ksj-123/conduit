@@ -1,0 +1,75 @@
+{
+  "uid" : "af6fc1e48ab3e6b",
+  "name" : "test_comment",
+  "fullName" : "testproject.TC007postcomment_test#test_comment",
+  "historyId" : "95009f56059dd2e9b5e1b03d2289a8ea",
+  "time" : {
+    "start" : 1629024391126,
+    "stop" : 1629024482517,
+    "duration" : 91391
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "37ce9e8c07e88226",
+      "name" : "log",
+      "source" : "37ce9e8c07e88226.txt",
+      "type" : "text/plain",
+      "size" : 642
+    }, {
+      "uid" : "eaff39ec50f03990",
+      "name" : "stderr",
+      "source" : "eaff39ec50f03990.txt",
+      "type" : "text/plain",
+      "size" : 435
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject"
+  }, {
+    "name" : "suite",
+    "value" : "TC007postcomment_test"
+  }, {
+    "name" : "host",
+    "value" : "fv-az74-94"
+  }, {
+    "name" : "thread",
+    "value" : "3745-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.TC007postcomment_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "af6fc1e48ab3e6b.json",
+  "parameterValues" : [ ]
+}
