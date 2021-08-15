@@ -1,0 +1,119 @@
+{
+  "uid" : "8b2f7a6256e8399b",
+  "name" : "test_follow",
+  "fullName" : "testproject.TC005follow_test#test_follow",
+  "historyId" : "3c2e6ee9c491237299bb11e3367af8de",
+  "time" : {
+    "start" : 1629029044093,
+    "stop" : 1629029051163,
+    "duration" : 7070
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "8c005383ad799c19",
+      "name" : "log",
+      "source" : "8c005383ad799c19.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "d113e24e6fbbaba3",
+      "name" : "stdout",
+      "source" : "d113e24e6fbbaba3.txt",
+      "type" : "text/plain",
+      "size" : 18
+    }, {
+      "uid" : "f32c3d9eb0cc3ecb",
+      "name" : "stderr",
+      "source" : "f32c3d9eb0cc3ecb.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 3,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject"
+  }, {
+    "name" : "suite",
+    "value" : "TC005follow_test"
+  }, {
+    "name" : "host",
+    "value" : "fv-az77-600"
+  }, {
+    "name" : "thread",
+    "value" : "3744-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.TC005follow_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 4,
+        "unknown" : 0,
+        "total" : 4
+      },
+      "items" : [ {
+        "uid" : "4c5d020e353824f1",
+        "reportUrl" : "https://ksj-123.github.io/conduit/19//#testresult/4c5d020e353824f1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1629026430843,
+          "stop" : 1629026438872,
+          "duration" : 8029
+        }
+      }, {
+        "uid" : "761cf2143142d8a9",
+        "reportUrl" : "https://ksj-123.github.io/conduit/18//#testresult/761cf2143142d8a9",
+        "status" : "passed",
+        "time" : {
+          "start" : 1629025932772,
+          "stop" : 1629025940928,
+          "duration" : 8156
+        }
+      }, {
+        "uid" : "c7909dbdb7ea3263",
+        "reportUrl" : "https://ksj-123.github.io/conduit/17//#testresult/c7909dbdb7ea3263",
+        "status" : "passed",
+        "time" : {
+          "start" : 1629025128005,
+          "stop" : 1629025134920,
+          "duration" : 6915
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "8b2f7a6256e8399b.json",
+  "parameterValues" : [ ]
+}
