@@ -12,7 +12,7 @@ options.headless = True
 
 
 class TestUserReg(object):
-    def test_setup(self):
+    def test_registration(self):
         self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
         # Load page
         self.driver.get("http://localhost:1667/")
@@ -27,7 +27,7 @@ class TestUserReg(object):
 
         # Enter the data to be uploaded
         email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@mail.com'
-        pwd = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
+        pwd = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@1234'
         username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))
 
         # Sign up
@@ -39,7 +39,7 @@ class TestUserReg(object):
         with open("C:\\Users\\User\\PycharmProjects\\conduit\\reg_data2.csv", mode="w") as file:
             file.write(username + "," + email + "," + pwd)
         self.driver.find_element(By.XPATH, sign_up_x).click()
-        time.sleep(5)
+        time.sleep(8)
 
         # Check box
         assert ('Welcome!' in self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]').text)

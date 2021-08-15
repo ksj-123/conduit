@@ -7,14 +7,14 @@ from selenium.webdriver.common.by import By
 import time
 
 opt = Options()
-opt.headless = False
+opt.headless = True
 
 driver = webdriver.Chrome(ChromeDriverManager().install(), options=opt)
 
 def test_username_mod():
     # Load page
     driver.get('http://localhost:1667/')
-    time.sleep(2)
+    time.sleep(8)
 
     # Fields xpath
     sign_up_btn = '//*[@id="app"]/nav/div/ul/li[3]/a'

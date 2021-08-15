@@ -14,7 +14,7 @@ def test_comment():
 
     # Load page
     driver.get('http://localhost:1667/')
-    time.sleep(52)
+    time.sleep(8)
 
     # Enter the data to be uploaded
     email = 'testuser1@example.com'

@@ -83,7 +83,7 @@ try:
     print(len(article_number))
     new_num = int(len(article_number))
     print(new_num)
-    assert new_num + 1 == original_num
+    assert new_num < original_num
 
 finally:
     driver.close()
