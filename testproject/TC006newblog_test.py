@@ -36,7 +36,7 @@ def test_newpost():
     time.sleep(8)
 
     # Creat new post
-    with open('C:\\Users\\User\\PycharmProjects\\conduit\\post.csv') as csvfile:
+    with open('post.csv') as csvfile:
         csvreader = csv.reader(csvfile)
         next(csvreader)
         for row in csvreader:
