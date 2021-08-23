@@ -1,0 +1,86 @@
+{
+  "uid" : "ca03072bf0df4f12",
+  "name" : "test_registration",
+  "fullName" : "testproject.TC001registration_test.TestUserReg#test_registration",
+  "historyId" : "4a1cdbcff186ab64060c3b8c95ca0b4c",
+  "time" : {
+    "start" : 1629750018046,
+    "stop" : 1629750041892,
+    "duration" : 23846
+  },
+  "status" : "failed",
+  "statusMessage" : "AssertionError: assert 'Welcome!' in 'Registration failed!'\n +  where 'Registration failed!' = <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")>.text\n +    where <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")> = <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>>('xpath', '/html/body/div[2]/div/div[2]')\n +      where <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>> = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>.find_element\n +        where <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")> = <TC001registration_test.TestUserReg object at 0x7fc4175b8490>.driver\n +      and   'xpath' = By.XPATH",
+  "statusTrace" : "self = <TC001registration_test.TestUserReg object at 0x7fc4175b8490>\n\n    def test_registration(self):\n        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)\n        # Load page\n        self.driver.get(\"http://localhost:1667/\")\n        time.sleep(8)\n    \n        # Fields xpath\n        sign_up_btn = '//*[@id=\"app\"]/nav/div/ul/li[3]/a'\n        username_x = '//*[@id=\"app\"]/div/div/div/div/form/fieldset[1]/input'\n        email_x = '//*[@id=\"app\"]/div/div/div/div/form/fieldset[2]/input'\n        pwd_x = '//*[@id=\"app\"]/div/div/div/div/form/fieldset[3]/input'\n        sign_up_x = '//*[@id=\"app\"]/div/div/div/div/form/button'\n    \n        # Enter the data to be uploaded\n        email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@mail.com'\n        pwd = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@1234'\n        username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))\n    \n        # Sign up\n        self.driver.find_element(By.XPATH, sign_up_btn).click()\n        time.sleep(5)\n        self.driver.find_element(By.XPATH, username_x).send_keys(username)\n        self.driver.find_element(By.XPATH, email_x).send_keys(email)\n        self.driver.find_element(By.XPATH, pwd_x).send_keys(pwd)\n        with open(\"C:\\\\Users\\\\User\\\\PycharmProjects\\\\conduit\\\\reg_data2.csv\", mode=\"w\") as file:\n            file.write(username + \",\" + email + \",\" + pwd)\n        self.driver.find_element(By.XPATH, sign_up_x).click()\n        time.sleep(8)\n    \n        # Check box\n>       assert ('Welcome!' in self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]').text)\nE       assert 'Welcome!' in 'Registration failed!'\nE        +  where 'Registration failed!' = <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")>.text\nE        +    where <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")> = <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>>('xpath', '/html/body/div[2]/div/div[2]')\nE        +      where <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>> = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>.find_element\nE        +        where <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")> = <TC001registration_test.TestUserReg object at 0x7fc4175b8490>.driver\nE        +      and   'xpath' = By.XPATH\n\ntestproject/TC001registration_test.py:45: AssertionError",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "failed",
+    "statusMessage" : "AssertionError: assert 'Welcome!' in 'Registration failed!'\n +  where 'Registration failed!' = <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")>.text\n +    where <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")> = <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>>('xpath', '/html/body/div[2]/div/div[2]')\n +      where <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>> = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>.find_element\n +        where <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")> = <TC001registration_test.TestUserReg object at 0x7fc4175b8490>.driver\n +      and   'xpath' = By.XPATH",
+    "statusTrace" : "self = <TC001registration_test.TestUserReg object at 0x7fc4175b8490>\n\n    def test_registration(self):\n        self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)\n        # Load page\n        self.driver.get(\"http://localhost:1667/\")\n        time.sleep(8)\n    \n        # Fields xpath\n        sign_up_btn = '//*[@id=\"app\"]/nav/div/ul/li[3]/a'\n        username_x = '//*[@id=\"app\"]/div/div/div/div/form/fieldset[1]/input'\n        email_x = '//*[@id=\"app\"]/div/div/div/div/form/fieldset[2]/input'\n        pwd_x = '//*[@id=\"app\"]/div/div/div/div/form/fieldset[3]/input'\n        sign_up_x = '//*[@id=\"app\"]/div/div/div/div/form/button'\n    \n        # Enter the data to be uploaded\n        email = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@mail.com'\n        pwd = ''.join(random.choice(string.ascii_letters + string.digits) for i in range(10)) + '@1234'\n        username = ''.join((random.choice(string.ascii_letters + string.digits) for i in range(10)))\n    \n        # Sign up\n        self.driver.find_element(By.XPATH, sign_up_btn).click()\n        time.sleep(5)\n        self.driver.find_element(By.XPATH, username_x).send_keys(username)\n        self.driver.find_element(By.XPATH, email_x).send_keys(email)\n        self.driver.find_element(By.XPATH, pwd_x).send_keys(pwd)\n        with open(\"C:\\\\Users\\\\User\\\\PycharmProjects\\\\conduit\\\\reg_data2.csv\", mode=\"w\") as file:\n            file.write(username + \",\" + email + \",\" + pwd)\n        self.driver.find_element(By.XPATH, sign_up_x).click()\n        time.sleep(8)\n    \n        # Check box\n>       assert ('Welcome!' in self.driver.find_element(By.XPATH, '/html/body/div[2]/div/div[2]').text)\nE       assert 'Welcome!' in 'Registration failed!'\nE        +  where 'Registration failed!' = <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")>.text\nE        +    where <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")> = <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>>('xpath', '/html/body/div[2]/div/div[2]')\nE        +      where <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>> = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>.find_element\nE        +        where <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")> = <TC001registration_test.TestUserReg object at 0x7fc4175b8490>.driver\nE        +      and   'xpath' = By.XPATH\n\ntestproject/TC001registration_test.py:45: AssertionError",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "56cbc6898fbc5585",
+      "name" : "log",
+      "source" : "56cbc6898fbc5585.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "d34d78b4f32c1f38",
+      "name" : "stderr",
+      "source" : "d34d78b4f32c1f38.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : true,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject"
+  }, {
+    "name" : "suite",
+    "value" : "TC001registration_test"
+  }, {
+    "name" : "subSuite",
+    "value" : "TestUserReg"
+  }, {
+    "name" : "host",
+    "value" : "fv-az83-6"
+  }, {
+    "name" : "thread",
+    "value" : "3748-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.TC001registration_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ {
+      "name" : "Product defects",
+      "matchedStatuses" : [ ],
+      "flaky" : false
+    } ],
+    "tags" : [ ]
+  },
+  "source" : "ca03072bf0df4f12.json",
+  "parameterValues" : [ ]
+}

@@ -1,0 +1,26 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Product defects",
+    "children" : [ {
+      "name" : "AssertionError: assert 'Welcome!' in 'Registration failed!'\n +  where 'Registration failed!' = <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")>.text\n +    where <selenium.webdriver.remote.webelement.WebElement (session=\"f716621d47071a3f80d6787e55d270e7\", element=\"0760b7f9-8587-4758-b80a-836e9ec1fa22\")> = <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>>('xpath', '/html/body/div[2]/div/div[2]')\n +      where <bound method WebDriver.find_element of <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>> = <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")>.find_element\n +        where <selenium.webdriver.chrome.webdriver.WebDriver (session=\"f716621d47071a3f80d6787e55d270e7\")> = <TC001registration_test.TestUserReg object at 0x7fc4175b8490>.driver\n +      and   'xpath' = By.XPATH",
+      "children" : [ {
+        "name" : "test_registration",
+        "uid" : "ca03072bf0df4f12",
+        "parentUid" : "b5cd6af107e62a9753fec40cdca2c541",
+        "status" : "failed",
+        "time" : {
+          "start" : 1629750018046,
+          "stop" : 1629750041892,
+          "duration" : 23846
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "b5cd6af107e62a9753fec40cdca2c541"
+    } ],
+    "uid" : "8fb3a91ba5aaf9de24cc8a92edc82b5d"
+  } ],
+  "name" : "categories"
+}

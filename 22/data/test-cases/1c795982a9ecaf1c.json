@@ -1,0 +1,53 @@
+{
+  "uid" : "1c795982a9ecaf1c",
+  "name" : "test_login",
+  "fullName" : "testproject.TC002login_test#test_login",
+  "historyId" : "b80bb8cb8484c1065163e6dc7f6dbbde",
+  "time" : {
+    "start" : 1629750041946,
+    "stop" : 1629750051971,
+    "duration" : 10025
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject"
+  }, {
+    "name" : "suite",
+    "value" : "TC002login_test"
+  }, {
+    "name" : "host",
+    "value" : "fv-az83-6"
+  }, {
+    "name" : "thread",
+    "value" : "3748-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.TC002login_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1c795982a9ecaf1c.json",
+  "parameterValues" : [ ]
+}
