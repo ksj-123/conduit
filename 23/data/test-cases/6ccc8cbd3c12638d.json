@@ -1,0 +1,73 @@
+{
+  "uid" : "6ccc8cbd3c12638d",
+  "name" : "test_Global",
+  "fullName" : "testproject.TC010globalfeed_test#test_Global",
+  "historyId" : "2edabf0284f02fd99920fb2f49c497e2",
+  "time" : {
+    "start" : 1630347092238,
+    "stop" : 1630347102000,
+    "duration" : 9762
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject"
+  }, {
+    "name" : "suite",
+    "value" : "TC010globalfeed_test"
+  }, {
+    "name" : "host",
+    "value" : "fv-az74-622"
+  }, {
+    "name" : "thread",
+    "value" : "4006-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.TC010globalfeed_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "fd3262f656e7e34c",
+        "reportUrl" : "https://ksj-123.github.io/conduit/22//#testresult/fd3262f656e7e34c",
+        "status" : "passed",
+        "time" : {
+          "start" : 1629750348982,
+          "stop" : 1629750358752,
+          "duration" : 9770
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "6ccc8cbd3c12638d.json",
+  "parameterValues" : [ ]
+}

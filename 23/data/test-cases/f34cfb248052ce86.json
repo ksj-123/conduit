@@ -1,0 +1,95 @@
+{
+  "uid" : "f34cfb248052ce86",
+  "name" : "test_blog_delete",
+  "fullName" : "testproject.TC008postdelete_test#test_blog_delete",
+  "historyId" : "6583d828d6c7459777af0fb830f050ab",
+  "time" : {
+    "start" : 1630347065028,
+    "stop" : 1630347084288,
+    "duration" : 19260
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "testStage" : {
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ {
+      "uid" : "ffc13165cdac68a5",
+      "name" : "log",
+      "source" : "ffc13165cdac68a5.txt",
+      "type" : "text/plain",
+      "size" : 344
+    }, {
+      "uid" : "6404ff7621485329",
+      "name" : "stderr",
+      "source" : "6404ff7621485329.txt",
+      "type" : "text/plain",
+      "size" : 215
+    } ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 2,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "parentSuite",
+    "value" : "testproject"
+  }, {
+    "name" : "suite",
+    "value" : "TC008postdelete_test"
+  }, {
+    "name" : "host",
+    "value" : "fv-az74-622"
+  }, {
+    "name" : "thread",
+    "value" : "4006-MainThread"
+  }, {
+    "name" : "framework",
+    "value" : "pytest"
+  }, {
+    "name" : "language",
+    "value" : "cpython3"
+  }, {
+    "name" : "package",
+    "value" : "testproject.TC008postdelete_test"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "915f5797492f75f6",
+        "reportUrl" : "https://ksj-123.github.io/conduit/22//#testresult/915f5797492f75f6",
+        "status" : "passed",
+        "time" : {
+          "start" : 1629750321819,
+          "stop" : 1629750341066,
+          "duration" : 19247
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "f34cfb248052ce86.json",
+  "parameterValues" : [ ]
+}
