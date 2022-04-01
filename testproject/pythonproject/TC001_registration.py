@@ -51,7 +51,6 @@ try:
         sign_up = find(sign_up_x)
         sign_up.click()
 
-
     reg()
 
     time.sleep(5)
