@@ -58,9 +58,9 @@ There are a total of 100 users, with each user having the same password. Say we
 want to login as user 32:
 
 ```
-Username: user32
-Password: Userpass1
-Email: user32@hotmail.com
+email = 'testuser1@example.com'
+username = 'testuser1'
+pwd = 'Abcd123$'
 ```
 
 # Built With
